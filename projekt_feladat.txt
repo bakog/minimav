@@ -1,0 +1,10 @@
+A program fájlból olvasson be útvonalakat a beolvasott útvonalak feldolgozás után véletlenszerûen
+válasszon ki két állomást a beolvasottak közül és nézze meg, hogy van-e a kettõ között útvonal
+és ha igen, akkor írja ki a lehetséges útvonalat a hosszával egyetemben.
+
+Az útvonalakat tároló fájl szöveges állomány legyen, az egyes mezõket pontosvesszõ válassza el egymástól
+a következõ formában:
+állomás1_neve;állomás2_neve;távolság
+Budapest;Hatvan;60
+
+(Állomás2 szomszédos és elérhetõ Állomás1-bõl és viszont, a köztük lévõ távolság km-ben van megadva.)

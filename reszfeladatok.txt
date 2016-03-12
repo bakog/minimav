@@ -1,0 +1,4 @@
+- Fájl beolvasás
+- Gráf létrehozása (éllista, vagy csúcsmátrix?)
+- Gráfbejárás programozása (mélységi vagy szélességi?)
+- Eredmény kiírás
