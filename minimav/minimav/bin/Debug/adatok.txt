@@ -1,0 +1,13 @@
+Budapest;Százhalombatta;30
+Százhalombatta;Pusztaszabolcs;20
+Budapest;Martonvásár;25
+Martonvásár;Székesfehérvár;25
+Székesfehérvár;Pusztaszabolcs;30
+Budapest;Hatvan;60
+Hatvan;Füzesabony;80
+Füzesabony;Eger;25
+Budapest;Újszász;76
+Újszász;Hatvan;55
+Pécs;Pusztaszabolcs;135
+Nagykanizsa;Zalaegerszeg;86
+Zalaegerszeg;Szombathely;74
