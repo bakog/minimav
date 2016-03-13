@@ -1,4 +1,31 @@
-- Fájl beolvasás
-- Gráf létrehozása (éllista, vagy csúcsmátrix?)
-- Gráfbejárás programozása (mélységi vagy szélességi?)
+- Fájl beolvasás:
+
+adatok.txt-bõl
+pontosvesszõvel tagolt
+
+
+- Gráf létrehozása (éllistával a szomszédos csúcsoknál)
+
+csúcs tulajdonságai:
+
+        int _id; //csucs azonosito 
+        string _nev; //az csucs neve
+        public List<csucs> szomszedok = new List<csucs>(); //szomszédos csúcsok listája
+        public Colors szin; //a bejáráskori szín tárolása, kezdetben fehér, ha bejárható a gráf szürke lesz
+        public csucs os; //az csucs ose
+A csúcsokból készítsünk osztályt.
+
+
+A színeket tároljuk enum-ban:
+
+	enum Colors { szurke, feher, fekete };
+
+Az útvonal kíiráshoz veremszerû adatszerkezet kell, az tárolja majd a bejárás során az utat:
+- kiüríti
+- üres állapot vizsgálata
+- betesz egy elemet
+- kivesz egy elemet
+
+- Gráfbejárás programozása (mélységi!!)
+A bejáráshoz szükséges függvényeket, metódusokat is szervezzük osztályba (bejárás)
 - Eredmény kiírás
