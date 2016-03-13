@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace minimav
 {
+enum Colors { szurke, feher, fekete };
     class Program
     {
         static void Main(string[] args)
