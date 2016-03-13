@@ -11,3 +11,4 @@ Budapest;Újszász;76
 Pécs;Pusztaszabolcs;135
 Nagykanizsa;Zalaegerszeg;86
 Zalaegerszeg;Szombathely;74
+Zalaegerszeg;Gutorfölde;15
