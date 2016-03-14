@@ -1,12 +1,18 @@
-1. fájl beolvasás
-2. A csucs osztály létrehozása
+1. fÃ¡jl beolvasÃ¡s
+	- vÃ¡ltozÃ³k:
+		kezdoindex;
+		vegindex;
+		List<string> mh: megÃ¡llÃ³helyek nevei
+	adatok beolvasÃ¡sa fÃ¡jlbÃ³l
+	adatok vizsgÃ¡lata, van-e a listÃ¡ban mÃ¡r a megÃ¡llÃ³helybÅ‘l
+2. A csucs osztÃ¡ly lÃ©trehozÃ¡sa
 
-	-változók:
+	-vÃ¡ltozÃ³k:
 
         	int _id; //csucs azonosito 
         	string _nev; //az csucs neve
-        	public List<csucs> szomszedok = new List<csucs>(); //szomszédos csúcsok listája
-        	public Colors szin; //a bejáráskori szín tárolása, kezdetben fehér, ha bejárható a gráf szürke lesz
+        	public List<csucs> szomszedok = new List<csucs>(); //szomszÃ©dos csÃºcsok listÃ¡ja
+        	public Colors szin; //a bejÃ¡rÃ¡skori szÃ­n tÃ¡rolÃ¡sa, kezdetben fehÃ©r, ha bejÃ¡rhatÃ³ a grÃ¡f szÃ¼rke lesz
         	public csucs os; //az csucs ose
 
 	-property: id, nev
