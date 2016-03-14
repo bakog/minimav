@@ -16,8 +16,7 @@ namespace minimav
             int kezdoindex;
             int vegindex;
             List<string> mh = new List<string>(); 
-            //ide kerülnek az állomások nevei és ebből generálom az állomás id-jét az IndexOf segítségével, ellenőrizve, hogy van-e már ilyen állomás a listában
-
+            
             StreamReader r = new StreamReader(rname, Encoding.Default);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Adatok beolvasása fájlból... \n");
