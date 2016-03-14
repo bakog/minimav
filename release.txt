@@ -7,7 +7,7 @@
 	adatok vizsgálata, van-e a listában már a megállóhelyből
 2. A csucs osztály létrehozása
 
-	-változók:
+	-változók, property-k:
 
         	int _id; //csucs azonosito 
         	string _nev; //az csucs neve
@@ -17,6 +17,20 @@
 
 	-property: id, nev
 
-	-konstruktor
+	-konstruktor (public)
+
+3. el osztaly létrehozása
+	ez fogja tárolni az éleket, amiket a fájlból beolvasunk a gráfba
+	
+    - változók, property-k:
+    
+		public csucs k; //graf−el egyik vege
+        public csucs v; //graf−el masik vege
+        public int suly; //az el−hez rendelt
+		
+	- konstruktor (public)
+		
+		
+
 
 

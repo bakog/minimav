@@ -42,6 +42,18 @@ enum Colors { szurke, feher, fekete };
             this.nev = neve;
         }
     }
+    class el
+    {//a gráf egy éléhez tartozó információk
+        public csucs k; //graf−el egyik vege
+        public csucs v; //graf−el masik vege
+        public int suly; //az el−hez rendelt
+        public el(csucs elso, csucs masodik, int s)
+        {
+            this.k = elso;
+            this.v = masodik;
+            this.suly = s;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
