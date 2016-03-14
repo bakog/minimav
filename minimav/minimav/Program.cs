@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace minimav
 {
@@ -48,8 +50,8 @@ enum Colors { szurke, feher, fekete };
             string rname = "adatok.txt";
             string[] sor;
             Random rnd = new Random();
-            int kezdoindex;
-            int vegindex;
+            int idje1;
+            int idje2;
             List<string> mh = new List<string>(); 
             
             StreamReader r = new StreamReader(rname, Encoding.Default);
