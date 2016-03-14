@@ -1,7 +1,7 @@
-1. fájl beolvasás
+﻿1. fájl beolvasás
 	- változók:
-		kezdoindex;
-		vegindex;
+		idje1
+		idje2;
 		List<string> mh: megállóhelyek nevei
 	adatok beolvasása fájlból
 	adatok vizsgálata, van-e a listában már a megállóhelyből
