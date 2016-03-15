@@ -185,15 +185,10 @@ enum Colors { szurke, feher, fekete };
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a1].nev, G.allomasok[a2].nev);
                     G.szomszedot_felvesz(G.allomasok[a1],G.allomasok[a2]);
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
-                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
-                //G.szomszedot_felvesz(new csucs(idje2, mezo2));
-
+                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]); //G.szomszedot_felvesz(new csucs(idje2, mezo2));
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
-
-
             }
-            Console.ForegroundColor = ConsoleColor.White;
-            //Console.WriteLine("Megállók nevei\n");
+            Console.ForegroundColor = ConsoleColor.White; //Console.WriteLine("Megállók nevei\n");
             //mh.Sort();
             //foreach (string nevek in mh)
             //{
@@ -227,4 +222,7 @@ enum Colors { szurke, feher, fekete };
                 Console.WriteLine("{0} ", sz[i].nev);
             }
             bejaras.melysegi_bejaras_os_kezd(G);
+        }
+    }    
 }
+
