@@ -54,6 +54,42 @@ enum Colors { szurke, feher, fekete };
             this.suly = s;
         }
     }
+    class minimav //az állomások gráfja
+    {
+        public List<csucs> allomasok = new List<csucs>();
+        public List<csucs> szomszed_allomas = new List<csucs>();
+        public List<el> utvonalak = new List<el>();
+
+        public List<csucs> csucsok()
+        {
+            return allomasok;
+        }
+        public List<csucs> szomszedos_csucsok(csucs x)
+        {
+            return x.szomszedok;
+        }
+        public List<el> osszesel()
+        {
+            return utvonalak;
+        }
+        public int allomast_felvesz(csucs x)
+        {
+            if (x != null && !allomasok.Contains(x))
+            {
+                allomasok.Add(x);
+            }
+            return allomasok.IndexOf(x);
+        }
+        public void szomszedot_felvesz(csucs x, csucs y)
+        {
+            x.szomszedok.Add(y);
+        }
+        public void utvonalat_felvesz(csucs x, csucs y, int ertek)
+        {
+            utvonalak.Add(new el(x, y, ertek));
+            utvonalak.Add(new el(y, x, ertek));
+        }
+    }
     class Program
     {
         static void Main(string[] args)

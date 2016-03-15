@@ -31,7 +31,24 @@
 		
 	- konstruktor (public)
 		
+4. minimav osztály létrehozása:
+		-propertyk:
 		
+        public List<csucs> allomasok = new List<csucs>();
+        public List<csucs> szomszed_allomas = new List<csucs>();
+        public List<el> utvonalak = new List<el>();
+		
+		-metódusok, függvények:
+			csucsok(): visszaadja az allomasok listát, amiben a csúcsok vannak
+			szomszedos_csucsok (csucs x): visszaadja x csúcs szomszédjait, lásd csucs osztaly
+			osszesel(): visszaadja a utvonalak listát, amiben az élek vannak
+			allomast_felvesz (csucs x): hozzáadja x-et, az állomások listához, ha még nem volt benne és vissztér
+										az indexével
+			szomszedot_felvesz(csucs x, csucs y): x csúcshoz felveszi y-t, mint szomszéd, lásd csucs osztaly
+			utvonalat_felvesz(csucs x, csucs y, int ertek): felvesz egy élt az útvonalak közé, miután mindkét csúcsból el lehet
+													jutni a másikba, ezért x->y és y->x élt is felveszi
+
+			
 
 
 
