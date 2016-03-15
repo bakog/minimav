@@ -48,7 +48,9 @@
 			utvonalat_felvesz(csucs x, csucs y, int ertek): felvesz egy élt az útvonalak közé, miután mindkét csúcsból el lehet
 													jutni a másikba, ezért x->y és y->x élt is felveszi
 
-			
-
-
-
+5. utvonal osztály létrehozása
+	- propertyk
+	public List<csucs> veremcsucs = new List<csucs>();
+	public void kiurit(): veremcsúcs értékének törlése
+	public void berak(csucs C): új érték megadása a gráf bejárása során
+	public csucs kivesz(): utolsó csucs eltávolítása
