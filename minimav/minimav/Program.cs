@@ -42,6 +42,39 @@ enum Colors { szurke, feher, fekete };
             this.nev = neve;
         }
     }
+    class utvonal
+    {
+        public List<csucs> veremcsucs = new List<csucs>();
+        public void kiurit()
+        {
+            veremcsucs.Clear();
+        }
+        public bool ures()
+        {
+            if (veremcsucs.Count>0)
+            { return false; }
+            else { return true; }
+        }
+        public void berak(csucs C)
+        {
+            veremcsucs.Add(C);
+        }
+        public  csucs kivesz ()
+        {
+            int utolso = veremcsucs.Count()-1;
+            csucs x=veremcsucs[utolso];
+            veremcsucs.Remove(veremcsucs[utolso]);
+            return x;
+        }
+    }
+
+interface sor{//soradatszerkezet
+	void kiurit();
+	bool ures();
+	void berak (csucs C);
+	csucs kivesz();
+}
+
     class el
     {//a gráf egy éléhez tartozó információk
         public csucs k; //graf−el egyik vege
