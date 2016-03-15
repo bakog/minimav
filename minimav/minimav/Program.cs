@@ -135,4 +135,96 @@ enum Colors { szurke, feher, fekete };
             }
         }
     }
+    class Program
+    {
+        static minimav G = new minimav();
+        static utvonal veremadat = new utvonal();
+        static int idje1;
+        static int idje2;
+        static int a1;
+        static int a2;
+        static void Main(string[] args)
+        {
+            string rname = "adatok.txt";
+            string[] sor;   //string neve;
+            List<string> mh = new List<string>(); //halozat G = new halozat();
+            StreamReader r = new StreamReader(rname, Encoding.Default);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Adatok beolvasása fájlból... \n");
+            while (!r.EndOfStream)
+            {
+                sor = r.ReadLine().Split(';');
+                string mezo1 = sor[0];
+                string mezo2 = sor[1];
+                int mezo3 = Int32.Parse(sor[2]);
+                Console.WriteLine("{0} - {1} ({2} km.)", mezo1, mezo2, mezo3);
+                if (!mh.Contains(mezo1))
+                {
+                    mh.Add(mezo1);
+                    idje1 = mh.IndexOf(mezo1);
+                    a1=G.allomast_felvesz(new csucs(idje1, mezo1)); //csucs A = new csucs(idje1, mezo1);
+                }
+                else
+                {
+                    idje1 = mh.IndexOf(mezo1);
+                    a1 = idje1;
+                }
+                if (!mh.Contains(mezo2))
+                {
+                    mh.Add(mezo2);
+                    idje2 = mh.IndexOf(mezo2);
+                    a2=G.allomast_felvesz(new csucs(idje2, mezo2));
+                    G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3);
+                }
+                else
+                {
+                    idje2 = mh.IndexOf(mezo2);
+                    a2 = idje2;
+                    G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3);
+                }
+                Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a1].nev, G.allomasok[a2].nev);
+                    G.szomszedot_felvesz(G.allomasok[a1],G.allomasok[a2]);
+                Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
+                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
+                //G.szomszedot_felvesz(new csucs(idje2, mezo2));
+
+                //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
+
+
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            //Console.WriteLine("Megállók nevei\n");
+            //mh.Sort();
+            //foreach (string nevek in mh)
+            //{
+            //    Console.WriteLine(nevek);
+            //}
+            while (!r.EndOfStream)
+            {
+                sor = r.ReadLine().Split(';');
+                string mezo1 = sor[0];
+                string mezo2 = sor[1];
+                int mezo3 = Int32.Parse(sor[2]);
+                int index1 = mh.IndexOf(mezo1);
+                int index2 = mh.IndexOf(mezo2);
+            }
+            r.Close();
+            Console.WriteLine("\nÁllomások:\n");
+            foreach (csucs m in G.allomasok)
+            {
+                Console.WriteLine("{0}   - {1}",m.id,m.nev);
+            }
+            Console.WriteLine("\n\nÉlek:\n");
+            List<el> osszes = G.osszesel();
+            for (int i = 0; i < osszes.Count();i++ )
+            {
+                Console.WriteLine("{0} - {1} ({2} km.)",osszes[i].k.nev, osszes[i].v.nev,osszes[i].suly);
+            }
+            Console.WriteLine("{0} szomszédjai:",G.allomasok[0].nev);
+            List<csucs> sz = G.szomszedos_csucsok(G.allomasok[0]);
+            for (int i = 0; i < sz.Count(); i++)
+            {
+                Console.WriteLine("{0} ", sz[i].nev);
+            }
+            bejaras.melysegi_bejaras_os_kezd(G);
 }
