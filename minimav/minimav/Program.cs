@@ -214,7 +214,6 @@ interface sor{//soradatszerkezet
             {
                 Console.WriteLine("{0} ", sz[i].nev);
             }
-            bejaras.melysegi_bejaras_os_kezd(G);
             Console.ReadKey();
         }
     }
