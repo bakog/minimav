@@ -54,3 +54,12 @@
 	public void kiurit(): veremcsúcs értékének törlése
 	public void berak(csucs C): új érték megadása a gráf bejárása során
 	public csucs kivesz(): utolsó csucs eltávolítása
+
+6. Program létrehozása
+
+	változók deklarálása static int idje1; int idje2; static int a1; static int a2;
+	adatok beolvasása adatok.txt állományból
+	kiíratás, string mezo1, string mezo2, int mezo3 változók segítségével
+	adatok vizsgálata, van-e a listában már a megállóhelyből
+	állomások és útvonalak felvétele
+	állomások és élek kiíratása
