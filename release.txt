@@ -4,6 +4,7 @@
 		idje2;
 		List<string> mh: megállóhelyek nevei
 	adatok beolvasása fájlból
+	kiíratás, string mezo1, string mezo2, int mezo3 változók segítségével
 	adatok vizsgálata, van-e a listában már a megállóhelyből
 2. A csucs osztály létrehozása
 
