@@ -92,51 +92,6 @@ enum Colors { szurke, feher, fekete };
     }
     class Program
     {
-        static void Main(string[] args)
-        {
-            string rname = "adatok.txt";
-            string[] sor;
-            Random rnd = new Random();
-            int idje1;
-            int idje2;
-            List<string> mh = new List<string>(); 
-            //ide kerülnek az állomások nevei és ebből generálom az állomás id-jét az IndexOf segítségével,
-            //ellenőrizve, hogy van-e már ilyen állomás a listában
-            StreamReader r = new StreamReader(rname, Encoding.Default);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Adatok beolvasása fájlból... \n");
-            while (!r.EndOfStream)
-            {
-                sor = r.ReadLine().Split(';');
-                string mezo1 = sor[0];
-                string mezo2 = sor[1];
-                int mezo3 = Int32.Parse(sor[2]);
-                Console.WriteLine("{0} - {1} ({2} km.)", mezo1, mezo2, mezo3);
-
-                if (!mh.Contains(mezo1))
-                {
-                    mh.Add(mezo1);
-                    idje1 = mh.IndexOf(mezo1);
-                }
-                else
-                {
-                    idje1 = mh.IndexOf(mezo1);
-
-                }
-                if (!mh.Contains(mezo2))
-                {
-                    mh.Add(mezo2);
-                    idje2 = mh.IndexOf(mezo2);
-                }
-                else
-                {
-                    idje2 = mh.IndexOf(mezo2);
-                }
-            }
-        }
-    }
-    class Program
-    {
         static minimav G = new minimav();
         static utvonal veremadat = new utvonal();
         static int idje1;
@@ -146,8 +101,10 @@ enum Colors { szurke, feher, fekete };
         static void Main(string[] args)
         {
             string rname = "adatok.txt";
-            string[] sor;   //string neve;
-            List<string> mh = new List<string>(); //halozat G = new halozat();
+            string[] sor;
+            //string neve;
+            List<string> mh = new List<string>();
+            //halozat G = new halozat();
             StreamReader r = new StreamReader(rname, Encoding.Default);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Adatok beolvasása fájlból... \n");
@@ -182,13 +139,16 @@ enum Colors { szurke, feher, fekete };
                     a2 = idje2;
                     G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3);
                 }
+
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a1].nev, G.allomasok[a2].nev);
                     G.szomszedot_felvesz(G.allomasok[a1],G.allomasok[a2]);
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
-                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]); //G.szomszedot_felvesz(new csucs(idje2, mezo2));
+                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
+                //G.szomszedot_felvesz(new csucs(idje2, mezo2));
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
             }
-            Console.ForegroundColor = ConsoleColor.White; //Console.WriteLine("Megállók nevei\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            //Console.WriteLine("Megállók nevei\n");
             //mh.Sort();
             //foreach (string nevek in mh)
             //{
@@ -222,7 +182,7 @@ enum Colors { szurke, feher, fekete };
                 Console.WriteLine("{0} ", sz[i].nev);
             }
             bejaras.melysegi_bejaras_os_kezd(G);
+            Console.ReadKey();
         }
-    }    
+    }
 }
-
