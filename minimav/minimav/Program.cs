@@ -1,4 +1,4 @@
-﻿//utolsó módosító: Bakó Gábor
+﻿//utolsó módosító: Tóth Csaba
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,11 +69,6 @@ enum Colors { szurke, feher, fekete };
         }
     }
 
-interface sor{//soradatszerkezet
-	void kiurit();
-	bool ures();
-	void berak (csucs C);
-	csucs kivesz();
 }
 
     class el
