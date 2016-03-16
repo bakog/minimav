@@ -59,10 +59,13 @@
 
 	változók deklarálása static int idje1; int idje2; static int a1; static int a2;
 	adatok beolvasása adatok.txt állományból
+	List<string> mh = new List<string>(); adatok ide kerülnek, innen generálódnak az állomások id-jei IndexOf segítségével
 	kiíratás, string mezo1, string mezo2, int mezo3 változók segítségével
-	adatok vizsgálata, van-e a listában már a megállóhelyből
-	állomások és útvonalak felvétele kék színnel
-	állomások és élek kiíratása zöld illetve sárga színnel
+	if (!mh.Contains(mezo1)) - adatok vizsgálata, van-e a listában már a megállóhelyből
+	a1 = G.allomast_felvesz(new csucs(idje1, mezo1)) - állomások felvétele
+	G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3) - útvonalak felvétele
+	Console.WriteLine("\nÁllomások:\n"); Console.ForegroundColor = ConsoleColor.Green - állomások kiíratása zöld színnel
+	Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("\n\nÉlek:\n"); - élek/útvonalak kiíratása sárgaszínnel
 	útvonal kiválasztáshoz indexgenerálás
 	két végpont kiírása
 	
