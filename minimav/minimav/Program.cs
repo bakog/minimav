@@ -7,7 +7,7 @@ using System.IO;
 
 namespace minimav
 {
-enum Colors { szurke, feher, fekete };
+    enum Colors { szurke, feher, fekete };
     class csucs //csúcs = állomás
     {
         int _id; //csucs azonosito 
@@ -51,7 +51,7 @@ enum Colors { szurke, feher, fekete };
         }
         public bool ures()
         {
-            if (veremcsucs.Count>0)
+            if (veremcsucs.Count > 0)
             { return false; }
             else { return true; }
         }
@@ -59,21 +59,14 @@ enum Colors { szurke, feher, fekete };
         {
             veremcsucs.Add(C);
         }
-        public  csucs kivesz ()
+        public csucs kivesz()
         {
-            int utolso = veremcsucs.Count()-1;
-            csucs x=veremcsucs[utolso];
+            int utolso = veremcsucs.Count() - 1;
+            csucs x = veremcsucs[utolso];
             veremcsucs.Remove(veremcsucs[utolso]);
             return x;
         }
     }
-
-interface sor{//soradatszerkezet
-	void kiurit();
-	bool ures();
-	void berak (csucs C);
-	csucs kivesz();
-}
 
     class el
     {//a gráf egy éléhez tartozó információk
@@ -152,7 +145,7 @@ interface sor{//soradatszerkezet
                 {
                     mh.Add(mezo1);
                     idje1 = mh.IndexOf(mezo1);
-                    a1=G.allomast_felvesz(new csucs(idje1, mezo1)); //csucs A = new csucs(idje1, mezo1);
+                    a1 = G.allomast_felvesz(new csucs(idje1, mezo1)); //csucs A = new csucs(idje1, mezo1);
                 }
                 else
                 {
@@ -163,7 +156,7 @@ interface sor{//soradatszerkezet
                 {
                     mh.Add(mezo2);
                     idje2 = mh.IndexOf(mezo2);
-                    a2=G.allomast_felvesz(new csucs(idje2, mezo2));
+                    a2 = G.allomast_felvesz(new csucs(idje2, mezo2));
                     G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3);
                 }
                 else
@@ -174,9 +167,9 @@ interface sor{//soradatszerkezet
                 }
 
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a1].nev, G.allomasok[a2].nev);
-                    G.szomszedot_felvesz(G.allomasok[a1],G.allomasok[a2]);
+                G.szomszedot_felvesz(G.allomasok[a1], G.allomasok[a2]);
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
-                    G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
+                G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2));
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
             }
@@ -200,15 +193,15 @@ interface sor{//soradatszerkezet
             Console.WriteLine("\nÁllomások:\n");
             foreach (csucs m in G.allomasok)
             {
-                Console.WriteLine("{0}   - {1}",m.id,m.nev);
+                Console.WriteLine("{0}   - {1}", m.id, m.nev);
             }
             Console.WriteLine("\n\nÉlek:\n");
             List<el> osszes = G.osszesel();
-            for (int i = 0; i < osszes.Count();i++ )
+            for (int i = 0; i < osszes.Count(); i++)
             {
-                Console.WriteLine("{0} - {1} ({2} km.)",osszes[i].k.nev, osszes[i].v.nev,osszes[i].suly);
+                Console.WriteLine("{0} - {1} ({2} km.)", osszes[i].k.nev, osszes[i].v.nev, osszes[i].suly);
             }
-            Console.WriteLine("{0} szomszédjai:",G.allomasok[0].nev);
+            Console.WriteLine("{0} szomszédjai:", G.allomasok[0].nev);
             List<csucs> sz = G.szomszedos_csucsok(G.allomasok[0]);
             for (int i = 0; i < sz.Count(); i++)
             {
