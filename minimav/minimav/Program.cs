@@ -72,10 +72,10 @@ enum Colors { szurke, feher, fekete };
 }
 
     class el
-    {//a gráf egy éléhez tartozó információk
-        public csucs k; //graf−el egyik vege
-        public csucs v; //graf−el masik vege
-        public int suly; //az el−hez rendelt
+    {
+        public csucs k; 
+        public csucs v; 
+        public int suly; 
         public el(csucs elso, csucs masodik, int s)
         {
             this.k = elso;
@@ -83,7 +83,7 @@ enum Colors { szurke, feher, fekete };
             this.suly = s;
         }
     }
-    class minimav //az állomások gráfja
+    class minimav 
     {
         public List<csucs> allomasok = new List<csucs>();
         public List<csucs> szomszed_allomas = new List<csucs>();
@@ -119,7 +119,7 @@ enum Colors { szurke, feher, fekete };
             utvonalak.Add(new el(y, x, ertek));
         }
     }
-    class Program // utolsó módosító Tóth Csaba
+    class Program 
     {
         static minimav G = new minimav();
         static utvonal veremadat = new utvonal();
@@ -173,16 +173,9 @@ enum Colors { szurke, feher, fekete };
                     G.szomszedot_felvesz(G.allomasok[a1],G.allomasok[a2]);
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
                     G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
-                //G.szomszedot_felvesz(new csucs(idje2, mezo2));
-                //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
-            }
+                }
             Console.ForegroundColor = ConsoleColor.White;
-            //Console.WriteLine("Megállók nevei\n");
-            //mh.Sort();
-            //foreach (string nevek in mh)
-            //{
-            //    Console.WriteLine(nevek);
-            //}
+          
             while (!r.EndOfStream)
             {
                 sor = r.ReadLine().Split(';');
