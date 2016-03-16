@@ -1,4 +1,5 @@
-﻿using System;
+﻿//utolsó módosító: Tóth Csaba
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,11 +69,16 @@ namespace minimav
         }
     }
 
+<<<<<<< HEAD
+=======
+}
+
+>>>>>>> 0b4f6e16e4c8b3eaa6ccddb15ad99a632fb2f6a0
     class el
-    {//a gráf egy éléhez tartozó információk
-        public csucs k; //graf−el egyik vege
-        public csucs v; //graf−el masik vege
-        public int suly; //az el−hez rendelt
+    {
+        public csucs k; 
+        public csucs v; 
+        public int suly; 
         public el(csucs elso, csucs masodik, int s)
         {
             this.k = elso;
@@ -80,7 +86,7 @@ namespace minimav
             this.suly = s;
         }
     }
-    class minimav //az állomások gráfja
+    class minimav 
     {
         public List<csucs> allomasok = new List<csucs>();
         public List<csucs> szomszed_allomas = new List<csucs>();
@@ -119,7 +125,7 @@ namespace minimav
     class Program
     {
         static minimav G = new minimav();
-        static utvonal veremadat = new utvonal();
+        static utvonal utvonal_adat = new utvonal();
         static int idje1;
         static int idje2;
         static int a1;
@@ -128,9 +134,13 @@ namespace minimav
         {
             string rname = "adatok.txt";
             string[] sor;
-            //string neve;
+            Random rnd = new Random();
+            int kezdoindex;
+            int vegindex;
             List<string> mh = new List<string>();
-            //halozat G = new halozat();
+            //ide kerülnek az állomások nevei és ebből generálom az állomás id-jét az IndexOf segítségével, ellenőrizve, hogy van-e már ilyen állomás a listában
+            //lehetne másképp is, pl. a G állomásainak ellenőrzésével is és egy számláló bevezetésével  <- ez takarékosabb megoldás lenne, mert nincs szükség egy +listára... 
+
             StreamReader r = new StreamReader(rname, Encoding.Default);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Adatok beolvasása fájlból... \n");
@@ -141,11 +151,16 @@ namespace minimav
                 string mezo2 = sor[1];
                 int mezo3 = Int32.Parse(sor[2]);
                 Console.WriteLine("{0} - {1} ({2} km.)", mezo1, mezo2, mezo3);
+
                 if (!mh.Contains(mezo1))
                 {
                     mh.Add(mezo1);
                     idje1 = mh.IndexOf(mezo1);
+<<<<<<< HEAD
                     a1 = G.allomast_felvesz(new csucs(idje1, mezo1)); //csucs A = new csucs(idje1, mezo1);
+=======
+                    a1 = G.allomast_felvesz(new csucs(idje1, mezo1));
+>>>>>>> 0b4f6e16e4c8b3eaa6ccddb15ad99a632fb2f6a0
                 }
                 else
                 {
@@ -165,21 +180,17 @@ namespace minimav
                     a2 = idje2;
                     G.utvonalat_felvesz(new csucs(idje1, mezo1), new csucs(idje2, mezo2), mezo3);
                 }
-
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a1].nev, G.allomasok[a2].nev);
                 G.szomszedot_felvesz(G.allomasok[a1], G.allomasok[a2]);
                 Console.WriteLine("FELVESZ: {0} - {1}", G.allomasok[a2].nev, G.allomasok[a1].nev);
                 G.szomszedot_felvesz(G.allomasok[a2], G.allomasok[a1]);
+<<<<<<< HEAD
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2));
                 //G.szomszedot_felvesz(new csucs(idje2, mezo2), new csucs(idje1, mezo1));
+=======
+>>>>>>> 0b4f6e16e4c8b3eaa6ccddb15ad99a632fb2f6a0
             }
             Console.ForegroundColor = ConsoleColor.White;
-            //Console.WriteLine("Megállók nevei\n");
-            //mh.Sort();
-            //foreach (string nevek in mh)
-            //{
-            //    Console.WriteLine(nevek);
-            //}
             while (!r.EndOfStream)
             {
                 sor = r.ReadLine().Split(';');
@@ -190,24 +201,51 @@ namespace minimav
                 int index2 = mh.IndexOf(mezo2);
             }
             r.Close();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nÁllomások:\n");
             foreach (csucs m in G.allomasok)
             {
                 Console.WriteLine("{0}   - {1}", m.id, m.nev);
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\nÉlek:\n");
             List<el> osszes = G.osszesel();
             for (int i = 0; i < osszes.Count(); i++)
             {
                 Console.WriteLine("{0} - {1} ({2} km.)", osszes[i].k.nev, osszes[i].v.nev, osszes[i].suly);
             }
+<<<<<<< HEAD
             Console.WriteLine("{0} szomszédjai:", G.allomasok[0].nev);
             List<csucs> sz = G.szomszedos_csucsok(G.allomasok[0]);
             for (int i = 0; i < sz.Count(); i++)
+=======
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nVéletlenszerűen generálok két indexet az útvonal kiválasztásához és a gráf bejáráshoz!\n");
+            kezdoindex = rnd.Next(0, G.allomasok.Count - 1);
+            do
+>>>>>>> 0b4f6e16e4c8b3eaa6ccddb15ad99a632fb2f6a0
             {
-                Console.WriteLine("{0} ", sz[i].nev);
+                vegindex = rnd.Next(0, G.allomasok.Count - 1);
+            } while (kezdoindex == vegindex);
+            Console.WriteLine("\nA kezdő index {0}, a végpont indexe {1}, \nígy a következő két állomást sorsoltam ki: {2} - {3}\n", kezdoindex, vegindex, G.allomasok[kezdoindex].nev, G.allomasok[vegindex].nev);
+
+            bejaras.melysegi_bejaras_os_kezd(G); //a bejárás előtti inicializálás
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\n\nA mélységi bejárás kezdő csúcspontja {0}\n\n", G.allomasok[kezdoindex].nev);
+            bejaras.melysegi_bejaras(G, G.allomasok[kezdoindex]); //mélységi bejárás a véletlenszerűen kiválasztott csúcsból
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nMélységi bejárás után a csúcsok színei...\n");
+            foreach (csucs m in G.allomasok)
+            {
+                Console.WriteLine("{0}   - {1}  - {2}", m.id, m.nev, m.szin);
             }
+            bejaras.ut_kiiras(G, G.allomasok[kezdoindex], G.allomasok[vegindex], utvonal_adat); //útvonal kiírása
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\nA kilépéshez nyomjon le egy billentyűt!");
             Console.ReadKey();
         }
     }
 }
+
+    
