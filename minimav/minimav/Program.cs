@@ -124,7 +124,7 @@ interface sor{//soradatszerkezet
             utvonalak.Add(new el(y, x, ertek));
         }
     }
-    class Program
+    class Program // utolsó módosító Tóth Csaba
     {
         static minimav G = new minimav();
         static utvonal veremadat = new utvonal();
