@@ -63,3 +63,6 @@
 	adatok vizsgálata, van-e a listában már a megállóhelyből
 	állomások és útvonalak felvétele
 	állomások és élek kiíratása
+	
+	
+	
