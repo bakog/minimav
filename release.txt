@@ -61,8 +61,10 @@
 	adatok beolvasása adatok.txt állományból
 	kiíratás, string mezo1, string mezo2, int mezo3 változók segítségével
 	adatok vizsgálata, van-e a listában már a megállóhelyből
-	állomások és útvonalak felvétele
-	állomások és élek kiíratása
+	állomások és útvonalak felvétele kék színnel
+	állomások és élek kiíratása zöld illetve sárga színnel
+	útvonal kiválasztáshoz indexgenerálás
+	két végpont kiírása
 	
 	
 	
