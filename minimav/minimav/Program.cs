@@ -124,7 +124,115 @@ interface sor{//soradatszerkezet
             utvonalak.Add(new el(y, x, ertek));
         }
     }
-        class Program
+
+    /// <summary>
+    /// Bejárással kapcsolatos metódusokat tartalmazó osztály.
+    /// </summary>
+    class Bejaras
+    {
+        /// <summary>
+        /// Útvonal hosszának kiszámolása.
+        /// </summary>
+        /// <param name="utak"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public static int utvonal_hossz(List<el> utak, csucs x, csucs y)
+        {
+            int hossz = 0;
+            foreach (el elek in utak)
+            {
+                if (elek.k.id == x.id && elek.v.id == y.id)
+                {
+                    hossz = elek.suly;
+                    break;
+                }
+            }
+            return hossz;
+        }
+
+        /// <summary>
+        /// Bejárás előtt minden álloms fehérre színezése, ős törlése.
+        /// </summary>
+        /// <param name="G"></param>
+         static void melysegi_bejaras_os_kezd(minimav G) 
+        {
+            List<csucs> csucsok = G.csucsok();
+            foreach (csucs a in csucsok)
+            {
+                a.szin = Colors.feher;
+                a.os = null;
+            }
+        }
+
+        /// <summary>
+        /// Mélységi bejárás.
+        /// </summary>
+        /// <param name="G"></param>
+        /// <param name="x"></param>
+        static void melysegi_bejaras(minimav G, csucs x)
+        {
+            x.szin = Colors.szurke;
+            foreach (csucs sz in G.szomszedos_csucsok(x))
+            {
+                Console.WriteLine("Ezt a csúcsot vizsgálom... {0}", sz.nev);
+                if (sz.szin == Colors.feher)
+                {
+                    sz.os = x;
+                    Console.WriteLine("{0} őse {1}", sz.nev, x.nev);
+                    melysegi_bejaras(G, sz);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Útvonal kiírása.
+        /// </summary>
+        /// <param name="G"></param>
+        /// <param name="kezdet"></param>
+        /// <param name="veg"></param>
+        /// <param name="U"></param>
+        static void ut_kiiras(minimav G, csucs kezdet, csucs veg, utvonal U)
+        {
+            int hossza = 0;
+            U.kiurit(); //az utvonalat érintő csúcsok listájának kiürítése (itt tároljuk majd az útvonalat visszafelé)
+           //útvonal osszeallitasa
+            if (veg.szin != Colors.feher && kezdet.szin != Colors.feher)
+            {
+                csucs u = veg;
+                while (u != kezdet)
+                {
+                    csucs elozo = u;
+                    U.berak(u);
+                    u = u.os;
+                    if (u != elozo)
+                    {
+                        hossza += utvonal_hossz(G.osszesel(), elozo, u);
+                    }
+                }
+            }
+            if (U.ures())
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Nem vezet útvonal {0} állomástól {1} állomásig.", kezdet.nev, veg.nev);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Egy lehetséges útvonal {0} állomástól {1} állomásig.\n", kezdet.nev, veg.nev);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("{0} -> ", kezdet.nev);
+                while (U.ures() == false)  //van még állomás
+                {
+                    csucs x = U.kivesz();
+                    Console.Write("{0} -> ", x.nev);
+                }
+                Console.WriteLine("{0} km.", hossza);
+            }
+        }
+    }
+
+    class Program
     {
         static minimav G = new minimav();
         static utvonal utvonal_adat = new utvonal();
