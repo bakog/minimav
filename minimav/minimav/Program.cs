@@ -1,4 +1,4 @@
-// utolsó módosító: tóth csaba
+// utolsó módosító: Vásárhelyi Mátyás 
 using System;
 using System.Collections.Generic;
 using System.Linq;
