@@ -1,0 +1,14 @@
+A program a saját könyvtárában lévõ adatok.txt fájlból
+beolvassa az állomások neveit és azok távolságát, melyekbõ gráfot épít.
+Az állomásokból véletlenszerûen kisorsol kettõt, és mélységi bejárást végezve
+a gráfon megvizsgálja, hogy létezik-e út a két állomás között.
+Ha igen, akkor kiírja az egyik lehetséges útvonal állomásait és az út hosszát.
+
+A fájl formátuma:
+állmásnév1;állomásnév2;távolság(km)
+
+
+A prgram futásának egyes lépéseit a consolon megjeleníti, így nyomon követhetõ
+a gráf létrehozásának és bejárásának módja.
+
+A folytatáshoz nyomjon le egy billentyût!

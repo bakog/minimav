@@ -22,3 +22,6 @@ E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.csprojR
 C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.exe.config
 C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.exe
 C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.pdb
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.exe
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.pdb
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.csprojResolveAssemblyReference.cache

@@ -240,17 +240,39 @@ interface sor{//soradatszerkezet
         static int idje2;
         static int a1;
         static int a2;
-        static void Main(string[] args)
+
+        static void about()
+        {
+            string rname = "about.txt";
+            string sor;
+            Console.Clear();
+            Console.Write("A program készítői:");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(" Bakó Gábor, Tóth Csaba, Vásárhelyi Mátyás");
+            Console.CursorTop = 5;
+            Console.WriteLine("A program leírása:\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+
+            StreamReader r = new StreamReader(rname, Encoding.Default);
+            while (!r.EndOfStream)
+            {
+                sor = r.ReadLine();
+                Console.WriteLine(sor);
+
+            }
+            Console.ReadKey();
+        }
+            static void Main(string[] args)
         {
             string rname = "adatok.txt";
             string[] sor;
             Random rnd = new Random();
             int kezdoindex;
             int vegindex;
-            List<string> mh = new List<string>(); 
+            List<string> mh = new List<string>();
             //ide kerülnek az állomások nevei és ebből generálom az állomás id-jét az IndexOf segítségével, ellenőrizve, hogy van-e már ilyen állomás a listában
             //lehetne másképp is, pl. a G állomásainak ellenőrzésével is és egy számláló bevezetésével  <- ez takarékosabb megoldás lenne, mert nincs szükség egy +listára... 
-
+            about();
             StreamReader r = new StreamReader(rname, Encoding.Default);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Adatok beolvasása fájlból... \n");
