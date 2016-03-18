@@ -1,4 +1,4 @@
-// utolsó módosító: Tóth Csaba
+// Készítette: Bakó Gábor, Tóth Csaba, Vásárhelyi Mátyás
 using System;
 using System.Collections.Generic;
 using System.Linq;
