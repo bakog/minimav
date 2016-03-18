@@ -13,3 +13,12 @@ D:\Ujabb\minimav\minimav\obj\Debug\minimav.pdb
 D:\Ujabb\minimav\minimav\bin\Debug\minimav.exe
 D:\Ujabb\minimav\minimav\bin\Debug\minimav.pdb
 D:\Ujabb\minimav\minimav\obj\Debug\minimav.csprojResolveAssemblyReference.cache
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.exe.config
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.exe
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.pdb
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.exe
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.pdb
+E:\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.csprojResolveAssemblyReference.cache
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\bin\Debug\minimav.exe.config
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.exe
+C:\adatok\Dropbox\MA\2_felev\projekt\minimav2\minimav\minimav\obj\Debug\minimav.pdb
