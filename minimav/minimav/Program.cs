@@ -1,5 +1,5 @@
 ﻿// Készítette: Bakó Gábor, Tóth Csaba, Vásárhelyi Mátyás
-//commit teszt from VS
+//commit teszt from VS2013
 using System;
 using System.Collections.Generic;
 using System.Linq;
