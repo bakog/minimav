@@ -346,7 +346,7 @@ interface sor{//soradatszerkezet
                 vegindex = rnd.Next(0, G.allomasok.Count - 1);
             } while (kezdoindex == vegindex);
             Console.WriteLine("\nA kezdő index {0}, a végpont indexe {1}, \nígy a következő két állomást sorsoltam ki: {2} - {3}\n",kezdoindex,vegindex ,G.allomasok[kezdoindex].nev, G.allomasok[vegindex].nev);
-	    Bejaras.melysegi_bejaras_os_kezd(G); //a bejárás előtti inicializálás
+	        Bejaras.melysegi_bejaras_os_kezd(G); //a bejárás előtti inicializálás
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("\n\nA mélységi bejárás kezdő csúcspontja {0}\n\n", G.allomasok[kezdoindex].nev);
             Bejaras.melysegi_bejaras(G, G.allomasok[kezdoindex]); //mélységi bejárás a véletlenszerűen kiválasztott csúcsból
