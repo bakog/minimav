@@ -1,4 +1,4 @@
-// Készítette: Bakó Gábor, Tóth Csaba, Vásárhelyi Mátyás
+﻿// Készítette: Bakó Gábor, Tóth Csaba, Vásárhelyi Mátyás
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace minimav
 enum Colors { szurke, feher, fekete };
     class csucs //csúcs = állomás
     {
-        int _id; //csucs azonosito 
+        int _id; //csucs azonositó
         string _nev; //az csucs neve
         public List<csucs> szomszedok = new List<csucs>(); //szomszédos csúcsok listája
         public Colors szin; //a bejáráskori szín tárolása, kezdetben fehér, ha bejárható a gráf szürke lesz
