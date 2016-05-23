@@ -8,7 +8,7 @@ A fájl formátuma:
 állmásnév1;állomásnév2;távolság(km)
 
 
-A prgram futásának egyes lépéseit a consolon megjeleníti, így nyomon követhetõ
+A program futásának egyes lépéseit a consolon megjeleníti, így nyomon követhetõ
 a gráf létrehozásának és bejárásának módja.
 
 A folytatáshoz nyomjon le egy billentyût!
